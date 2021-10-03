@@ -44,10 +44,9 @@
   visibility: visible;
 }
 .current--slide{
-  color:red;
+  color:var(--color--view);
 }
 .count__container{
   margin: 10px 0;
   text-align: center;
-
 }
