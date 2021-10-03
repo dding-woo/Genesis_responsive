@@ -6,7 +6,12 @@ navbar.addEventListener("mouseover", () => {
 navbar.addEventListener("mouseout", () => {
   navbar.style.height = "72px";
 });
-
+// Top으로 auto Scroll하기
+const topScrollBtn = document.querySelector(".arrowtop__btn");
+topScrollBtn.addEventListener("click", () => {
+  let scrollTo = document.querySelector("#header");
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+});
 // animation trigger
 const animationTrigger = ".first__gsap__ani .grey__box";
 
@@ -161,7 +166,7 @@ $(function () {
       start: 'top 40%',
       // end: '+=300',
       toggleActions: "restart none none none",
-      markers: true,
+      // markers: true,
 
     }
   });
@@ -197,10 +202,6 @@ $(function () {
       }
     }
   });
-
-
-
-
 
 
 
