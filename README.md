@@ -23,7 +23,7 @@ scrollTrigger을 처음 사용해보았는데, 옵션들로 인해 정말 간편
 markers옵션을 사용해서 요소의 star지점과 end지점을 봤는데 이상하게 값이 자꾸 변한다.
 충분히 라이브러리에 대한 이해와 공부를 한 후 다시 시도해봐야겠다.
 
-##TopScroll 버튼 만들기
+## TopScroll 버튼 만들기
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/70466220/135755724-9a49596c-12c4-4c04-a51f-1169086f096b.gif)
 
 ```js
