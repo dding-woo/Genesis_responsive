@@ -1,6 +1,7 @@
 /* header */
 #header{
-  position: relative;
+  position: fixed;
+  width: 100%;
   z-index: 10;
 }
 .header__top__menu{
@@ -64,8 +65,11 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background-color: #231f20;
+  background-color: transparent;
 
+}
+#navbar:hover{
+  background-color: #231f20;
 }
 #navbar:hover::after{
   content: "";

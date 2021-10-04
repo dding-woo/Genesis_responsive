@@ -160,18 +160,18 @@ $(function () {
   //세 번째 애니메이션
 
   // video__section 애니메이션
-  let videoSectiopnAni = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#section3 .video__section",
-      start: 'top 40%',
-      // end: '+=300',
-      toggleActions: "restart none none none",
-      // markers: true,
+  // let videoSectiopnAni = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: "#section3 .video__section",
+  //     start: 'top 40%',
+  //     // end: '+=300',
+  //     toggleActions: "restart none none none",
+  //     // markers: true,
 
-    }
-  });
-  videoSectiopnAni.from('#section3 .video__section', { duration: 1, opacity: 0, y: "100%", })
-  videoSectiopnAni.to('#section3 .video__section', { duration: 3, opacity: 1, y: "0%", stagger: 0.3 })
+  //   }
+  // });
+  // videoSectiopnAni.from('#section3 .video__section', { duration: 1, opacity: 0, y: "100%", })
+  // videoSectiopnAni.to('#section3 .video__section', { duration: 3, opacity: 1, y: "0%", stagger: 0.3 })
   // thunb contianer 애니메이션
 
   //section 2 슬라이드 count and autoplay
