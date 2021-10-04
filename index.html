@@ -12,8 +12,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/swiper.css">
+
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/respones.css">
+
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="main.js" defer></script>
@@ -50,80 +54,85 @@
       </div>
     </div>
     <!-- navbar -->
-    <nav id="navbar">
+    <div id="navbar">
       <h1 class="logo">
-        <span class="ally--hidden">대동 로고입니다.</span>
-        <a href="#">
-          <img src="./img/logo/logo.png" alt="daedong">
-        </a>
+        <a href="#"><span class="ally--hidden">대동 로고입니다.</span></a>
       </h1>
-      <ul class="navbar__menu">
-        <li>
-          <a href="#" target="_blank">100년 대통</a>
-          <ul class="sub__navbar__menu">
-            <li><a href="#" target="_blank">100년을 향한 도전</a></li>
-            <li><a href="#" target="_blank">CEO인사말</a></li>
-            <li><a href="#" target="_blank">연혁</a></li>
-            <li><a href="#" target="_blank">CI</a></li>
-            <li><a href="#" target="_blank">비전</a></li>
-            <li><a href="#" target="_blank">윤리경영</a></li>
-            <li><a href="#" target="_blank">IR 정보</a></li>
-            <li><a href="#" target="_blank">사업장 소개</a></li>
-            <li><a href="#" target="_blank">계열사 소개</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" target="_blank">미래를 위한 혁신</a>
-          <ul class="sub__navbar__menu">
-            <li><a href="#" target="_blank">대동의 미래농업</a></li>
-            <li><a href="#" target="_blank">스마트농기계</a></li>
-            <li><a href="#" target="_blank">연혁</a></li>
-            <li><a href="#" target="_blank">스마트모빌리티</a></li>
-            <li><a href="#" target="_blank">스마트팜</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" target="_blank">제품소개</a>
-          <ul class="sub__navbar__menu">
-            <li><a href="#" target="_blank">전체보기</a></li>
-            <li><a href="#" target="_blank">트랙터</a></li>
-            <li><a href="#" target="_blank">콤바인</a></li>
-            <li><a href="#" target="_blank">이앙기</a></li>
-            <li><a href="#" target="_blank">다목적 운반차</a></li>
-            <li><a href="#" target="_blank">경운기</a></li>
-            <li><a href="#" target="_blank">엔진</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" target="_blank">고객지원</a>
-          <ul class="sub__navbar__menu">
-            <li><a href="#" target="_blank">고객지원 안내</a></li>
-            <li><a href="#" target="_blank">대동 서비스 안내</a></li>
-            <li><a href="#" target="_blank">대동 네트워크</a></li>
-            <li><a href="#" target="_blank">제품 구매 안내</a></li>
-            <li><a href="#" target="_blank">제품 관리 점검</a></li>
-            <li><a href="#" target="_blank">온라인문의</a></li>
-            <li><a href="#" target="_blank">공장 견학 신청</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" target="_blank">대동스토리</a>
-          <ul class="sub__navbar__menu">
-            <li><a href="#" target="_blank">대동 Movie</a></li>
-            <li><a href="#" target="_blank">대동 News</a></li>
-            <li><a href="#" target="_blank">카드뉴스</a></li>
-            <li><a href="#" target="_blank">홍보자료실</a></li>
-          </ul>
-        </li>
-      </ul> <!-- navbar__menu -->
+      <nav>
+        <ul class="navbar__menu">
+          <li>
+            <a href="#" target="_blank">100년 대통</a>
+            <ul class="sub__navbar__menu">
+              <li><a href="#" target="_blank">100년을 향한 도전</a></li>
+              <li><a href="#" target="_blank">CEO인사말</a></li>
+              <li><a href="#" target="_blank">연혁</a></li>
+              <li><a href="#" target="_blank">CI</a></li>
+              <li><a href="#" target="_blank">비전</a></li>
+              <li><a href="#" target="_blank">윤리경영</a></li>
+              <li><a href="#" target="_blank">IR 정보</a></li>
+              <li><a href="#" target="_blank">사업장 소개</a></li>
+              <li><a href="#" target="_blank">계열사 소개</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" target="_blank">미래를 위한 혁신</a>
+            <ul class="sub__navbar__menu">
+              <li><a href="#" target="_blank">대동의 미래농업</a></li>
+              <li><a href="#" target="_blank">스마트농기계</a></li>
+              <li><a href="#" target="_blank">연혁</a></li>
+              <li><a href="#" target="_blank">스마트모빌리티</a></li>
+              <li><a href="#" target="_blank">스마트팜</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" target="_blank">제품소개</a>
+            <ul class="sub__navbar__menu">
+              <li><a href="#" target="_blank">전체보기</a></li>
+              <li><a href="#" target="_blank">트랙터</a></li>
+              <li><a href="#" target="_blank">콤바인</a></li>
+              <li><a href="#" target="_blank">이앙기</a></li>
+              <li><a href="#" target="_blank">다목적 운반차</a></li>
+              <li><a href="#" target="_blank">경운기</a></li>
+              <li><a href="#" target="_blank">엔진</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" target="_blank">고객지원</a>
+            <ul class="sub__navbar__menu">
+              <li><a href="#" target="_blank">고객지원 안내</a></li>
+              <li><a href="#" target="_blank">대동 서비스 안내</a></li>
+              <li><a href="#" target="_blank">대동 네트워크</a></li>
+              <li><a href="#" target="_blank">제품 구매 안내</a></li>
+              <li><a href="#" target="_blank">제품 관리 점검</a></li>
+              <li><a href="#" target="_blank">온라인문의</a></li>
+              <li><a href="#" target="_blank">공장 견학 신청</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" target="_blank">대동스토리</a>
+            <ul class="sub__navbar__menu">
+              <li><a href="#" target="_blank">대동 Movie</a></li>
+              <li><a href="#" target="_blank">대동 News</a></li>
+              <li><a href="#" target="_blank">카드뉴스</a></li>
+              <li><a href="#" target="_blank">홍보자료실</a></li>
+            </ul>
+          </li>
+        </ul> <!-- navbar__menu -->
+      </nav>
       <div class="search">
         <a href="#">
-          <span class=" ally--hidden">검색버튼입니다.</span>
           <i class="search__icon"></i>
           <span>검색</span>
         </a>
       </div>
-    </nav>
+      <!-- 포커스가 가야하기 때문에 a태그 -->
+      <a href="#" class="menu__btn">
+        <span class="ally--hidden">
+          <i></i>
+          <i></i>
+        </span>
+      </a>
+    </div>
   </header>
 
   <!-- top main slide -->
@@ -132,24 +141,31 @@
       <div class="swiper-wrapper main__vis__wrap">
         <div class="swiper-slide main__vis__slide">
           <img src="./img/main_slide1.png" alt="">
-          <div class="main__vis__text">
-            <h2>농기계 1위에서 '미래농업 리딩기업'으로</h2>
-            <h3>대동이 만드는<br>미래농업 세상</h3>
+          <div class="inner">
+            <div class="main__vis__text">
+              <h2>농기계 1위에서 '미래농업 리딩기업'으로</h2>
+              <h3>대동이 만드는<br>미래농업 세상</h3>
+            </div>
           </div>
         </div>
-        <!-- <div class="swiper-slide main__vis__slide">
+        <div class="swiper-slide main__vis__slide">
           <img src="./img/main_slide2.png" alt="">
-          <div class="main__vis__text">
-            <h3>대동, 창사이래 최초<br>반기 매출 6천 300억 돌파</h3>
+          <div class="inner">
+            <div class="main__vis__text">
+              <h2>농기계 1위에서 '미래농업 리딩기업'으로</h2>
+              <h3>대동이 만드는<br>미래농업 세상</h3>
+            </div>
           </div>
         </div>
         <div class="swiper-slide main__vis__slide">
           <img src="./img/main_slide3.png" alt="">
-          <div class="main__vis__text">
-            <h2>대동의 첫 번째 미래형 트랙터 HX시리즈</h2>
-            <h3>대동, SMART ICT를 입다.</h3>
+          <div class="inner">
+            <div class="main__vis__text">
+              <h2>농기계 1위에서 '미래농업 리딩기업'으로</h2>
+              <h3>대동이 만드는<br>미래농업 세상</h3>
+            </div>
           </div>
-        </div> -->
+        </div>
       </div>
       <div class="main__vis--desc">
         <a href="#" target="_blank">
@@ -157,6 +173,14 @@
           <span class="view__icon">VIEW MORE</span>
         </a>
       </div>
+      <div class="controls">
+        <div class="swiper-pagination main__vis-pagenation"></div>
+        <button type="button" class="btn pause">정지</button>
+        <div class="guage">
+          <span></span>
+        </div>
+      </div>
+
     </div>
   </section>
   <!-- section : promotion -->
@@ -167,10 +191,9 @@
     </div>
     <div class="section__container">
       <ul>
-        <li class="section__content--row left">
+        <li class="section__content--row first">
           <div class="img_container">
             <div class="img__bg first__gsap__ani">
-              <div class="grey__box"></div>
               <img src="./img/01.png" alt="">
             </div>
           </div>
@@ -183,10 +206,9 @@
             <a href="#" target="_blank">View MORE</a>
           </div>
         </li>
-        <li class="section__content--row">
+        <li class="section__content--row second">
           <div class="img_container">
             <div class="img__bg second__gsap__ani--reverse">
-              <div class="grey__box"></div>
               <img src="./img/02.png" alt="">
             </div>
           </div>
@@ -200,10 +222,9 @@
             <a href="#" target="_blank">View MORE</a>
           </div>
         </li>
-        <li class="section__content--row left">
+        <li class="section__content--row third">
           <div class="img_container">
             <div class="img__bg third__ani">
-              <div class="grey__box"></div>
               <img src="./img/03.png" alt="">
             </div>
           </div>
@@ -435,7 +456,7 @@
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination progressbar"></div>
+      <div class="swiper-pagination progressbar best__progressbar"></div>
 
     </div>
     </div>
@@ -450,7 +471,7 @@
       </h2>
     </div>
     <!-- 뉴스 스와이퍼 모바일 사이즈에서만 스와이퍼 활성화!-->
-    <div class="section__contianer">
+    <div class="section__container">
       <div class="news__vis">
         <div class="news__list">
           <article class="news__slide">
@@ -542,17 +563,14 @@
       </div>
     </div>
     <!--뉴스 스와이퍼 끝-->
-    <!-- arrowTopbtn -->
-    <div class="arrowtop__btn">
-      <button type="button">TOP</button>
-    </div>
+
   </section>
   <!-- footer -->
   <footer id="footer">
     <div class="footer__inner">
       <div class="footer__left">
         <h2 class="logo">
-          <img src="./img/logo/logo.png" alt="대동">
+          <a href="#"><span class="ally--hidden">대동 로고입니다.</span></a>
         </h2>
         <address class="company__info">
           <b>대구 본사/공장</b>
@@ -632,9 +650,13 @@
           공통대표이사 :김준식,원유현<br>
           사업자등록번호: 514-81-06690
         </div>
-        <div class="copy">Copyright © 2020 daedong all rights reserved</div>
+        <p class="copy">Copyright © 2020 daedong all rights reserved</p>
       </div>
     </div>
+    <!-- arrowTopbtn -->
+    <!-- <div class="arrowtop__btn"> -->
+    <button type="button" class="arrowtop__btn">TOP</button>
+    <!-- </div> -->
   </footer>
 </body>
 
