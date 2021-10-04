@@ -1,7 +1,7 @@
-:root{
-  --color--view:#EF4023;
+:root {
+  --color--view: #ef4023;
 }
-.ally--hidden{
+.ally--hidden {
   display: inline-block;
   position: absolute;
   width: 1px;
@@ -10,11 +10,11 @@
   clip: rect(0 0 0 0);
   margin: -1px;
 }
-.title__container{
-  margin: 0 3rem 8.750em;
+.title__container {
+  margin: 0 3rem 8.75em;
   text-align: center;
 }
-.title__container .title{
+.title__container .title {
   display: block;
   margin-bottom: 0.5em;
   font-weight: 700;
@@ -22,11 +22,12 @@
   letter-spacing: -0.02em;
   color: var(--color--view);
 }
-.title__container .sub__title{
+.title__container .sub__title {
   font-size: 3em;
   font-weight: 700;
 }
-.section__container{
-  width: 1246px;
-  margin: auto
+.section__container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 50px;
 }
