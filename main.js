@@ -1,11 +1,35 @@
-'use strict';
-const navbar = document.querySelector("#navbar");
-navbar.addEventListener("mouseover", () => {
-  navbar.style.height = "auto";
+// 'use strict';
+
+// $('.navbar__menu').hover(function(){
+//  $('#header,#navbar').addClass('on');  
+// },function(){
+//   $('#header,#navbar').removeClass('on');  
+// });
+$('.navbar__menu').mouseover(function () {
+  $('#header,#navbar').addClass('on');
 });
-navbar.addEventListener("mouseout", () => {
-  navbar.style.height = "72px";
+$('.navbar__menu').mouseleave(function () {
+  $('#header,#navbar').removeClass('on');
 });
+
+
+
+$(window).scroll(function () {
+  let curr = $(window).scrollTop();
+  if (curr >= 10) {
+    $('#header').addClass('on');
+  } else {
+    $('#header').removeClass('on');
+  }
+});
+
+// const navbar = document.querySelector("#navbar");
+// navbar.addEventListener("mouseover", () => {
+//   navbar.style.height = "auto";
+// });
+// navbar.addEventListener("mouseout", () => {
+//   navbar.style.height = "72px";
+// });
 // Top으로 auto Scroll하기
 const topScrollBtn = document.querySelector(".arrowtop__btn");
 topScrollBtn.addEventListener("click", () => {
@@ -22,11 +46,11 @@ $(function () {
   let fadeinContainer = gsap.timeline({
     scrollTrigger: {
       trigger: '#section1 .title__container',
-      start: 'top 50%',
+      start: 'top 80%',
       // end: '+=300',
       toggleActions: "restart none none none",
       // markers: true,
-
+      scrub: 1,
     }
   });
   fadeinContainer.from('#section1 .title__container', { opacity: 0, y: "100%" })
@@ -67,10 +91,11 @@ $(function () {
   let sectionThirdTitleAni = gsap.timeline({
     scrollTrigger: {
       trigger: '#section3 .title__container ',
-      start: 'top 70%',
+      start: 'top 80%',
       // end: '+=300',
       toggleActions: "restart none none none",
       // markers: true,
+      scrub: 1,
 
     }
   });
@@ -79,84 +104,32 @@ $(function () {
   // section 3 titleContainer 애니메이션
 
   // 1번째 이미지 배경 애니메이션
-  let firstimgBgAni = gsap.timeline({
-    scrollTrigger: {
-      trigger: animationTrigger,
-      start: 'top 50%',
-      // end: '+=300',
-      toggleActions: "restart none none none",
-      // markers: true,
+
+  $(window).scroll(function () {
+    ani_curr = $(window).scrollTop();
+
+    scroll_motion('#section1 .first', $(window).height() / 1.5);
+    scroll_motion('#section1 .second', $(window).height() / 1.5);
+    scroll_motion('#section1 .third', $(window).height() / 1.5);
+  })
+
+  // x  - 트리거  #section1 .sec01
+  // z - offset $(window).height() / 1.5
+
+
+  function scroll_motion(trigger, offset) {
+    target = $(trigger).offset().top - offset;
+    if (ani_curr > target) {
+      $(trigger).addClass('on');
     }
+
+  }
+  $('.video__thumb').click(function (e) {
+    e.preventDefault();
+    $(this).html('<iframe width="560" height="315" src="https://www.youtube.com/embed/qxbMHruxM_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
   });
-  firstimgBgAni.from('.first__gsap__ani .grey__box', { opacity: 0, x: "-100%", delay: 0.3 })
-  firstimgBgAni.to('.first__gsap__ani .grey__box', { duration: 3, opacity: 1, x: "0%", stagger: 0.3 })
-
-  let firstimgAni = gsap.timeline({
-    scrollTrigger: {
-      trigger: animationTrigger,
-      start: 'top 50%',
-      // end: '+=300',
-      toggleActions: "restart none none none",
-      // markers: true,
-    }
-  });
-  firstimgAni.from('.first__gsap__ani img', { opacity: 0, x: "-100%", delay: 0.6 })
-  firstimgAni.to('.first__gsap__ani img', { duration: 3, opacity: 1, x: "0%", stagger: 0.3 })
-  // 1번째 이미지 배경 애니메이션
-
-  // 두 번째 애니메이션
-  let imgSecondBgAni = gsap.timeline({
-    scrollTrigger: {
-      trigger: animationTrigger,
-      start: 'top 30%',
-      // end: '+=300',
-      toggleActions: "restart none none none",
-      // markers: true,
-    }
-  });
-  imgSecondBgAni.from('.second__gsap__ani--reverse .grey__box', { opacity: 0, x: "100%", delay: 0.3 })
-  imgSecondBgAni.to('.second__gsap__ani--reverse .grey__box', { duration: 3, opacity: 1, x: "0%", stagger: 0.3 })
-  let imgSecondAni = gsap.timeline({
-    scrollTrigger: {
-      trigger: animationTrigger,
-      start: 'top 30%',
-      // end: '+=300',
-      toggleActions: "restart none none none",
-      // markers: true,
-
-    }
-  });
-  imgSecondAni.from('.second__gsap__ani--reverse img', { opacity: 0, x: "100%", delay: 0.6 })
-  imgSecondAni.to('.second__gsap__ani--reverse img', { duration: 3, opacity: 1, x: "0%", stagger: 0.3 })
-  // 두 번째 애니메이션
-
-  //세 번째 애니메이션
-  let imgThirdBgAni = gsap.timeline({
-    scrollTrigger: {
-      trigger: animationTrigger,
-      start: 'top 10%',
-      // end: '+=300',
-      toggleActions: "restart none none none",
-      // markers: true,
-    }
-  });
-  imgThirdBgAni.from('.third__ani .grey__box', { opacity: 0, x: "-100%", delay: 0.3 })
-  imgThirdBgAni.to('.third__ani .grey__box', { duration: 3, opacity: 1, x: "0%", stagger: 0.3 })
 
 
-  let imgThirdAni = gsap.timeline({
-    scrollTrigger: {
-
-      trigger: animationTrigger,
-      start: 'top 10%',
-      // end: '+=300',
-      toggleActions: "restart none none none",
-      // markers: true,
-
-    }
-  });
-  imgThirdAni.from('.third__ani img', { opacity: 0, x: "-100%", delay: 0.6 })
-  imgThirdAni.to('.third__ani img', { duration: 3, opacity: 1, x: "0%", stagger: 0.3 })
   //세 번째 애니메이션
 
   // video__section 애니메이션
@@ -174,6 +147,44 @@ $(function () {
   // videoSectiopnAni.to('#section3 .video__section', { duration: 3, opacity: 1, y: "0%", stagger: 0.3 })
   // thunb contianer 애니메이션
 
+
+  var mainslide = new Swiper(".main__vis", {
+    loop: true,
+    on: {
+      init: function () {
+        ani();
+      },
+      slideChange: function () {
+        ani();
+      }
+    },
+    pagination: {
+      el: ".main__vis-pagenation",
+      type: 'bullets',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + "0" + (index + 1) + "</span>";
+      }
+    }
+  });
+
+  function ani() {
+    $('.main__vis .controls .guage span ').css({ width: 0 }).stop().animate({ width: 100 + '%' }, 5000, function () {
+      mainslide.slideNext();
+    });
+  }
+  $('.controls .btn').click(function () {
+    if ($(this).hasClass('pause')) {
+      //재생이 되고 있는 상태
+      $('.main__vis .controls .guage span ').css({ width: 0 }).stop()
+      $(this).removeClass('pause').text('재생')
+    } else {
+      //재생이 중지된 상태
+      ani();
+      $(this).addClass('pause').text('정지')
+    }
+  });
+
   //section 2 슬라이드 count and autoplay
   let slideList = document.querySelectorAll(".best__slide");
   let currentSlideCount = document.querySelector(".current--slide");
@@ -185,7 +196,7 @@ $(function () {
     loop: true,
     // loopFillGroupWithBlank: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: ".best__progressbar",
       clickable: true,
       type: 'progressbar',
     },
