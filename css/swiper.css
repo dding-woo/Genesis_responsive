@@ -1,4 +1,4 @@
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+#section2 .best__progressbar .swiper-pagination-progressbar-fill{
   background-color:var(--color--view);
 }
 .progressbar.swiper-horizontal>.swiper-pagination-progressbar,
@@ -49,4 +49,25 @@
 .count__container{
   margin: 10px 0;
   text-align: center;
+}
+#main__banner .swiper-pagination{
+  text-align: left;
+  left: 0;
+  bottom: 35px;
+}
+#main__banner .swiper-pagination-bullet{
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  font-size: 1rem;
+  margin-right: 24px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 1;
+  display: inline-block;
+}
+
+
+#main__banner .swiper-pagination-bullet-active{
+  color: var(--color--view);
 }
