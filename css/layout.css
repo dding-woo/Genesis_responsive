@@ -7,11 +7,11 @@ body {
 #header {
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 11;
   transition: 0.5s;
 }
 #header.on {
-  background-color:#231f20;
+  background-color: #231f20;
   color: #fff;
   transition: 0.5s;
 }
@@ -31,8 +31,6 @@ body {
   display: inline-block;
   margin: 0 1rem;
   color: #9d9f9e;
-}
-.header__top__menu li {
 }
 .header__top__menu li #language {
   display: inline-block;
@@ -81,6 +79,9 @@ body {
   color: #fff;
   transition: 0.5s;
 }
+#navbar.show {
+  background-color: #231f20;
+}
 #navbar::after {
   content: "";
   display: block;
@@ -90,7 +91,7 @@ body {
   top: 80px;
   left: 0;
   height: 350px;
-  background-color:#231f20;
+  background-color: #231f20;
   position: absolute;
   transition: 0.5s;
 }
@@ -111,6 +112,7 @@ body {
   line-height: 80px;
   /* background: blue; */
   padding: 0 10px;
+  width: 165px;
 }
 #navbar .navbar__menu > li > a {
   padding: 0 25px;
@@ -123,8 +125,8 @@ body {
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
-  /* transition: 0.5s; */
-  /* height: 350px; */
+  transition: 0.5s;
+  height: 350px;
   left: 0;
 }
 #navbar.on .sub__navbar__menu {
@@ -136,22 +138,7 @@ body {
   line-height: 30px;
 }
 #navbar .sub__navbar__menu li:first-child {
-  padding-top: 30px;
-}
-/* #navbar:hover::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #333;
-  position: absolute;
-  top: 72px;
-} */
-#navbar .sub__navbar__menu {
-  /* visibility: hidden; */
-}
-#navbar:hover .sub__navbar__menu {
-  /* visibility: visible; */
+  padding-top: 10px;
 }
 #navbar .logo {
   position: absolute;
@@ -160,14 +147,19 @@ body {
   transform: translateY(-50%);
   width: 150px;
   height: 30px;
-  background: url(../img/logo/logo.png) no-repeat;
+  background: url(../img/logo/logo.webp) no-repeat;
   background-size: 100%;
 }
 #navbar .logo a {
   display: block;
   height: 100%;
 }
-
+.response__menu1 {
+  display: none;
+}
+.response__global {
+  display: none;
+}
 .search {
   position: absolute;
   top: 50%;
@@ -198,6 +190,7 @@ body {
   background-color: #000;
   color: #9d9f9e;
   font-size: 0.875rem;
+  position: relative;
 }
 .footer__inner {
   display: flex;
@@ -209,7 +202,14 @@ body {
   padding: 0 15px;
 }
 .footer__left .logo {
-  width: 42%;
+  width: 150px;
+  height: 30px;
+  background: url(../img/logo/logo.webp) no-repeat;
+  background-size: 100%;
+}
+.footer__left .logo a {
+  display: block;
+  height: 100%;
 }
 .footer__left .logo img {
   max-width: 100%;
@@ -224,18 +224,18 @@ body {
   color: #fff;
   font-weight: 300;
 }
-.footer__left .footer__left__service {
+.footer__left .footer__service {
   margin: 0 0 15px;
 }
-.footer__left .footer__left__service ul {
+.footer__left .footer__service ul {
   display: flex;
 }
-.footer__left .footer__left__service li {
+.footer__left .footer__service li {
   margin-right: 20px;
   color: #fff;
   position: relative;
 }
-.footer__left .footer__left__service li + li::before {
+.footer__left .footer__service li + li::before {
   content: "";
   display: block;
   top: 0.3rem;
@@ -244,6 +244,10 @@ body {
   border-left: 1px solid #ccc;
   position: absolute;
 }
+.footer__dropdownmenu {
+  display: none;
+}
+
 .footer__center {
   flex: 0 0 50%;
   max-width: 50%;
@@ -286,6 +290,10 @@ body {
   font-size: 1.25em;
   font-weight: 400;
 }
+.footer__right .footer__serivce {
+  display: none;
+}
 .footer__right .copy {
   margin-top: 60px;
 }
+/* arrowTopbtn */
