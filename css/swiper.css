@@ -31,6 +31,7 @@
 .swiper-button-prev:after{
   font-size: 2.3rem;
 }
+
 .best__slide.swiper-slide-next{
   background-color: #210f20;
 }
@@ -66,8 +67,6 @@
   opacity: 1;
   display: inline-block;
 }
-
-
 #main__banner .swiper-pagination-bullet-active{
   color: var(--color--view);
 }
