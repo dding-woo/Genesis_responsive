@@ -1,19 +1,41 @@
-// 'use strict';
+
 
 // $('.navbar__menu').hover(function(){
 //  $('#header,#navbar').addClass('on');  
 // },function(){
 //   $('#header,#navbar').removeClass('on');  
 // });
-$('.navbar__menu').mouseover(function () {
+
+// 키자마자 조건
+if ($(window).width() >= 1150) {
+  $('#header').addClass('pc_menu')
+
+} else {
+  $('#header').removeClass('pc_menu')
+}
+$(window).on("resize", function () {
+  if ($(window).width() >= 1150) {
+    $('#header').addClass('pc_menu')
+  } else {
+    $('#header').removeClass('pc_menu')
+  }
+});
+// $('.pc_menu .navbar__menu').on("mouseover", function () {
+//   $('#header,#navbar').addClass('on');
+// });
+// $('.pc_menu .navbar__menu').on("mouseleave", function () {
+//   $('#header,#navbar').removeClass('on');
+// });
+
+// 리사이징 했을 때 pc_menu 가 있으면 mouseover, mouseleave 기능 
+$(document).on("mouseover", ".pc_menu .navbar__menu", function () {
   $('#header,#navbar').addClass('on');
-});
-$('.navbar__menu').mouseleave(function () {
+})
+$(document).on("mouseleave", ".pc_menu .navbar__menu", function () {
   $('#header,#navbar').removeClass('on');
-});
+})
 
-
-
+// 스크롤 내렸을 때 10보다 크면 header 배경색 넣기
 $(window).scroll(function () {
   let curr = $(window).scrollTop();
   if (curr >= 10) {
@@ -23,21 +45,59 @@ $(window).scroll(function () {
   }
 });
 
-// const navbar = document.querySelector("#navbar");
-// navbar.addEventListener("mouseover", () => {
-//   navbar.style.height = "auto";
-// });
-// navbar.addEventListener("mouseout", () => {
-//   navbar.style.height = "72px";
-// });
+
+
+
+const menuBtn = document.querySelector(".menu__btn");
+const body = document.querySelector("body");
+const nav = document.querySelector("#navbar");
+const navbar = document.querySelector("#navbar nav");
+menuBtn.addEventListener("click", () => {
+  navbar.classList.toggle("on");
+  body.classList.toggle('hidden');
+  nav.classList.toggle('show');
+});
+
+// // 1150px 이상에서 사용할 스크립트 } else { // 1024px 미만에서 사용할 스크립트 }
+
+//해상도 1150px Global menu 클릭 이벤트
+const globalBtn = document.querySelector(".response__global > li");
+const globallist = document.querySelector(".response__global--none");
+
+globalBtn.addEventListener("click", () => {
+  globallist.classList.toggle('active')
+});
+
+// 모바일 서브메뉴 아코디언
+$('#navbar .navbar__menu > li > a').click(function (event) {
+  event.preventDefault();
+  var submenu = $(this).next();
+  submenu.toggleClass('subslidemenu');
+  $('.subslidemenu').not(submenu).removeClass('subslidemenu');
+  return false
+});
+
 // Top으로 auto Scroll하기
-const topScrollBtn = document.querySelector(".arrowtop__btn");
+const topScrollBtn = document.querySelector(".arrowtop");
 topScrollBtn.addEventListener("click", () => {
-  let scrollTo = document.querySelector("#header");
+  let scrollTo = document.querySelector("#main__banner");
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 });
+
+
+//footer dorop Down menu
+
+const dropBtn = document.querySelector(".dropdownbtn");
+const dropdown = document.querySelector(".footer__dropdownmenu");
+dropBtn.addEventListener("click", () => {
+  dropdown.classList.toggle('show');
+});
+
+
+
 // animation trigger
-const animationTrigger = ".first__gsap__ani .grey__box";
+// const animationTrigger = ".first__gsap__ani .grey__box";
+
 
 $(function () {
   gsap.registerPlugin(ScrollTrigger);
@@ -126,7 +186,7 @@ $(function () {
   }
   $('.video__thumb').click(function (e) {
     e.preventDefault();
-    $(this).html('<iframe width="560" height="315" src="https://www.youtube.com/embed/qxbMHruxM_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+    $(this).html('<iframe width="560" height="315" src="https://www.youtube.com/embed/1KGSNIG6iiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
   });
 
 
@@ -146,6 +206,7 @@ $(function () {
   // videoSectiopnAni.from('#section3 .video__section', { duration: 1, opacity: 0, y: "100%", })
   // videoSectiopnAni.to('#section3 .video__section', { duration: 3, opacity: 1, y: "0%", stagger: 0.3 })
   // thunb contianer 애니메이션
+
 
 
   var mainslide = new Swiper(".main__vis", {
@@ -175,11 +236,11 @@ $(function () {
   }
   $('.controls .btn').click(function () {
     if ($(this).hasClass('pause')) {
-      //재생이 되고 있는 상태
+      //중지를 원할 때
       $('.main__vis .controls .guage span ').css({ width: 0 }).stop()
       $(this).removeClass('pause').text('재생')
     } else {
-      //재생이 중지된 상태
+      //재생을 원할 때
       ani();
       $(this).addClass('pause').text('정지')
     }
@@ -191,8 +252,9 @@ $(function () {
   let totalSlideCount = document.querySelector(".total--slide");
   totalSlideCount.innerText = slideList.length;
 
+
   var swiper = new Swiper(".best__item__contianer", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     loop: true,
     // loopFillGroupWithBlank: true,
     pagination: {
@@ -211,12 +273,46 @@ $(function () {
       activeIndexChange: function () {
         currentSlideCount.innerText = this.realIndex + 1;
       }
+    },
+    breakpoints: {
+      1150: {
+        slidesPerView: 3,
+      },
+
     }
   });
 
 
+  // 
+  var ww = $(window).width();
+  var mySwiper = undefined;
 
+  function initmobileswiper() {
 
+    // console.log(typeof swiper);
+    // window width가 768보다 작고 스와이퍼가 실행 되지 않았을 때 스와이퍼 실행!
+    if (ww < 768 && mySwiper == undefined) {
+      mySwiper = new Swiper(".news-swiper", {
+        slidesPerView: 1.3,
+      });
+    }
+
+    //이미 실행 된 스와이프는 object 제거해도 object
+    // 타입이기 때문에 제거와 동시에 undefined로 수정 
+    else if (ww > 768 && mySwiper != undefined) {
+      mySwiper.destroy();
+      mySwiper = undefined
+    }
+
+  }
+
+  initmobileswiper();
+
+  $(window).on("resize", function () {
+    console.log("hi");
+    ww = $(window).width();
+    initmobileswiper();
+  })
 
 
 });//지우면안됨
